@@ -43,5 +43,18 @@ export const StyledList = styled.ul`
 export const StyledListItem = styled.li`
   padding: 10px;
   transition:all 0.3s;
-  background: ${({highlighted}) => highlighted ? "red" : "white"}
+  background: ${({highlighted}) => highlighted ? "red" : "white"};
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  &:hover{
+    span{
+      color: red
+    }
+  }
+  span{
+    position: absolute;
+    right: -10px;
+  }
 `;

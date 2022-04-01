@@ -45,7 +45,12 @@ export default function Stopwatchtopwatch() {
       };
     }
   }, [isActive]);
-
+  const removeItem = (i) => {
+    const filtered = markTime.filter((val, ind) => {
+      return ind != i;
+    });
+    setMarkTime(filtered);
+  };
   return (
     <>
       <StyledStopwatch>
@@ -71,7 +76,11 @@ export default function Stopwatchtopwatch() {
       {markTime && (
         <StyledList>
           {markTime.map((e, i) => {
-            return <ListItem key={i}>{e}</ListItem>;
+            return (
+              <ListItem key={i} remove={() => removeItem(i)}>
+                {e}
+              </ListItem>
+            );
           })}
         </StyledList>
       )}
