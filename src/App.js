@@ -28,8 +28,8 @@ const StyledButton = styled.button`
   }
 `;
 function App() {
-  const [showClock, setShowClock] = useState(true);
-  const [showStopwatch, setShowStopwatch] = useState(false);
+  const [showClock, setShowClock] = useState(false);
+  const [showStopwatch, setShowStopwatch] = useState(true);
 
   function toggleClock() {
     setShowClock((prevState) => !prevState);

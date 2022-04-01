@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import numToTime from "../lib/numToTime";
+import ListItem from "./ListItem";
 import {
   StyledStopwatch,
   StyledButtons,
   StyledButton,
   StyledTime,
   StyledList,
-  StyledListItem,
 } from "./StyledStopwatch";
 
 export default function Stopwatchtopwatch() {
@@ -45,9 +45,7 @@ export default function Stopwatchtopwatch() {
       };
     }
   }, [isActive]);
-  useEffect(()=>{
-    
-  },[markTime])
+
   return (
     <>
       <StyledStopwatch>
@@ -73,7 +71,7 @@ export default function Stopwatchtopwatch() {
       {markTime && (
         <StyledList>
           {markTime.map((e, i) => {
-            return <StyledListItem key={i} highlighted>{e}</StyledListItem>;
+            return <ListItem key={i}>{e}</ListItem>;
           })}
         </StyledList>
       )}
